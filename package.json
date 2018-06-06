@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "prestart": "yarn run build",
     "start": "node src/index.js"
   },
   "keywords": [],

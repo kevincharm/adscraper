@@ -32,6 +32,7 @@ async function navigate(browser: puppeteer.Browser) {
     console.log('\x1B[32;1mClicking play button!\x1B[0m')
     await page.click('.vjs-big-play-button')
 
+    await delay(10000) // allow time to catch response from DFP
     await browser.close()
 }
 
@@ -45,4 +46,8 @@ async function responseHandler(event: puppeteer.Response) {
     console.log(`Found ad call: ${url.slice(0, 80)}...`)
     const response = await event.text()
     console.log(`Response: ${response.slice(0, 80)}...`)
+}
+
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
