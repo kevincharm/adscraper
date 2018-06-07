@@ -1,7 +1,8 @@
 import * as puppeteer from 'puppeteer'
 
-const CHROME_EXEC_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+const CHROME_EXEC_PATH = process.env.CHROME_EXEC_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 const PAGE_URL =
+    process.env.PAGE_URL ||
     'https://thewest.com.au/news/crime/phillip-zillner-jailed-for-outrageous-hoax-calls-to-women-ng-b88858923z'
 
 main()
